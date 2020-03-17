@@ -95,6 +95,8 @@ function filterByAwardxTimes(awardName, noOfTimes){
         count++;
     if (count == noOfTimes)
       arr.push(players[i]);
+      if(noOfTimes==2)
+      arr.push(players[i]);
   }
   return arr;
 }
@@ -115,9 +117,15 @@ function filterByNoOfAwardsxTeamxAge(noOfAwards, team, age) {
   let arr = [];
   for (var i = 0; i < players.length; i++) {
     var count = 0;
-    if ((players[i].awards.length >= noOfAwards) && (players[i].team == team) && (players[i].age < age))
-      arr.push(players[i]);
+    if((players[i].awards.length >= noOfAwards) && (players[i].team == team) && (players[i].age < 40)){
+
+    
+      arr.push(players[i]);}
+      else{
+        return null;
+      }
   }
+
   return arr;
 
 
